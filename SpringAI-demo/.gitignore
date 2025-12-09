@@ -1,33 +1,12 @@
-HELP.md
-target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
-.vscode/
+# IntelliJ IDEA 通用忽略规则
+.idea/                # IDEA 项目配置目录（核心，必加）
+*.iml                 # 模块配置文件
+*.iws                 # 工作区配置文件（旧版 IDEA）
+*.ipr                 # 项目配置文件（旧版 IDEA）
+out/                  # 编译输出目录
+target/               # Maven/Gradle 编译输出（若用构建工具，必加）
+classes/              # 手动编译的类文件目录
+*.log                 # 日志文件（可选）
+*.tmp                 # 临时文件（可选）
+*.bak                 # 备份文件（可选）
+.DS_Store             # Mac 系统文件（可选，跨平台建议加）
