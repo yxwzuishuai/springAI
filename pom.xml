@@ -31,6 +31,8 @@
 		<spring-ai.version>1.0.0</spring-ai.version>
 		<!-- Spring AI Alibaba 新建2025.9-->
 		<SpringAIAlibaba.version>1.0.0.2</SpringAIAlibaba.version>
+        <!-- MyBatis-Plus 版本（适配Spring Boot 3.x） -->
+        <mybatis-plus.version>3.5.5</mybatis-plus.version>
 	</properties>
 
 	<dependencyManagement>
@@ -59,6 +61,12 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+            <!-- MyBatis-Plus BOM（统一管理版本） -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -78,6 +86,15 @@
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<!-- MyBatis-Plus 仓库（确保依赖可下载） -->
+		<repository>
+			<id>aliyunmaven</id>
+			<name>阿里云中央仓库</name>
+			<url>https://maven.aliyun.com/repository/public</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
