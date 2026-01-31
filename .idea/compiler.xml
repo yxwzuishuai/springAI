@@ -8,13 +8,19 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SpringAI-demo" />
         <module name="yxw-demo" />
+        <module name="common" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="virtualThread" target="21" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="SpringAI" options="" />
       <module name="SpringAI-demo" options="-parameters" />
+      <module name="common" options="-parameters" />
+      <module name="virtualThread" options="-parameters" />
       <module name="yxw-demo" options="-parameters" />
     </option>
   </component>

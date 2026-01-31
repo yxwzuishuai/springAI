@@ -12,6 +12,7 @@
 
 	<modules>
 		<module>SpringAI-demo</module>
+        <module>common</module>
 	</modules>
 
 
@@ -26,7 +27,7 @@
 		<maven.compiler.target>21</maven.compiler.target>
 		<java.version>21</java.version>
 		<!-- Spring Boot 新建2025.9-->
-		<spring-boot.version>3.5.5</spring-boot.version>
+		<spring-boot.version>3.2.5</spring-boot.version>
 		<!-- Spring AI 新建2025.9-->
 		<spring-ai.version>1.0.0</spring-ai.version>
 		<!-- Spring AI Alibaba 新建2025.9-->
@@ -35,51 +36,58 @@
         <mybatis-plus.version>3.5.5</mybatis-plus.version>
 	</properties>
 
-	<dependencyManagement>
-		<dependencies>
-			<!-- Spring Boot -->
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-dependencies</artifactId>
-				<version>${spring-boot.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<!-- Spring AI Alibaba -->
-			<dependency>
-				<groupId>com.alibaba.cloud.ai</groupId>
-				<artifactId>spring-ai-alibaba-bom</artifactId>
-				<version>${SpringAIAlibaba.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<!-- Spring AI -->
-			<dependency>
-				<groupId>org.springframework.ai</groupId>
-				<artifactId>spring-ai-bom</artifactId>
-				<version>${spring-ai.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-            <!-- MyBatis-Plus BOM（统一管理版本） -->
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- Spring Boot 依赖版本管理 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Spring AI -->
+            <dependency>
+                <groupId>org.springframework.ai</groupId>
+                <artifactId>spring-ai-bom</artifactId>
+                <version>${spring-ai.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Spring AI Alibaba -->
+            <dependency>
+                <groupId>com.alibaba.cloud.ai</groupId>
+                <artifactId>spring-ai-alibaba-bom</artifactId>
+                <version>${SpringAIAlibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- MyBatis Plus 版本统一 -->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
-		</dependencies>
-	</dependencyManagement>
+
+        </dependencies>
+    </dependencyManagement>
 
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>${spring-boot.version}</version>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 	<repositories>
 		<repository>

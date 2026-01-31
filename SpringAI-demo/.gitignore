@@ -10,3 +10,15 @@ classes/              # 手动编译的类文件目录
 *.tmp                 # 临时文件（可选）
 *.bak                 # 备份文件（可选）
 .DS_Store             # Mac 系统文件（可选，跨平台建议加）
+
+
+# Maven Wrapper
+mvnw
+mvnw.cmd
+.mvn/
+
+# Spring Boot default help file
+HELP.md
+
+# Git attributes (optional to ignore)
+.gitattributes
